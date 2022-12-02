@@ -1,0 +1,8 @@
+[Desktop Entry]
+Conmment=查单词，顾名思义
+Exec=main.py
+Icon=icon.xcf
+Name=look up words
+Name[zh]=查单词
+Terminal=true
+Type=Application

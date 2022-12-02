@@ -1,0 +1,8 @@
+Package: look-up-words-by--xiguang
+Version: 1.0.0
+Maintainer: 汐光 <3285778581@qq.com>
+Architecture: all
+Priority: optional
+Depends: python3, python3-pip, fbi, wget, apt, dpkg, python3-requests
+Description: 查单词，顾名思义
+

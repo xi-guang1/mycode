@@ -1,7 +1,9 @@
 import tkinter as tk
-from musicpy import *
 from typing import *
+
 from event import *
+
+from musicpy import *
 
 a1 = note("C",5)
 a2 = note("D",5)
@@ -66,7 +68,7 @@ _ = 1/8
 # note_lst = str_to_list("1. 2. 3. 1. 1. 2. 3. 1. 3. 4. 5. 3. 4. 5. 5. 6. 5. 4. 3. 1. 5. 6. 5. 4. 3. 1. 2. 5 1. 2. 5 1.")
 # durlst = [n,] * 8 + [n, n, nd + _,] *2 + [_,_,_,_,n,n,] * 2 + [n, n, nd + _,] *2
 
-#小星星
+# 小星星
 # note_lst = str_to_list("1 1 5 5 6 6 5 4 4 3 3 2 2 1 5 5 4 4 3 3 2 5 5 4 4 3 3 2 1 1 5 5 6 6 5 4 4 3 3 2 2 1")
 # durlst = ([n,n,] * 3 + [nd + _]) * 6
 

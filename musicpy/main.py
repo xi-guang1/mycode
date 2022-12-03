@@ -1,8 +1,6 @@
 import tkinter as tk
 from typing import *
-
 from event import *
-
 from musicpy import *
 
 a1 = note("C",5)

@@ -1,7 +1,8 @@
+#!/usr/bin/python3
 
-from ui import *
-import PyQt5.QtWidgets
 import sys
+import PyQt5.QtWidgets
+from ui import *
 
 app = PyQt5.QtWidgets.QApplication(sys.argv)
 w = PyQt5.QtWidgets.QWidget()

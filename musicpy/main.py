@@ -1,7 +1,12 @@
-import tkinter as tk
+#!/usr/bin/python3
+
+import sys
+import PyQt5.QtWidgets
+from ui import *
 from typing import *
 from event import *
 from musicpy import *
+
 
 a1 = note("C",5)
 a2 = note("D",5)
@@ -27,19 +32,6 @@ a5__ = note("G",4)
 a6__ = note("A",4)
 a7__ = note("B",4)
 
-
-root = tk.Tk()
-root.minsize(600,450)
-
-Label_note = tk.Label(root,font = ("宋体",20),text='fh')
-Entry_note = tk.Entry(root)
-btn_play = tk.Button(root,font = ("宋体",10),text='play')
-
-Label_note.grid(row=0,column=0)
-Entry_note.grid(row=0,column=1)
-btn_play.grid(row=0,column=2)
-
-btn_play.config(command=lambda: btn_play_onclick(str_to_list(Entry_note.get())))
 
 def str_to_list(string: str) -> List[note]:
     res = []
@@ -81,4 +73,12 @@ _ = 1/8
 # print(len(note_lst),len(durlst))
 # play(chord(note_lst, durlst, durlst_1), 120, name='musicpy/temp.mid')
 
-root.mainloop()
+
+app = PyQt5.QtWidgets.QApplication(sys.argv)
+w = PyQt5.QtWidgets.QWidget()
+
+root = Ui_Form()
+root.setupUi(w)
+
+w.show()
+app.exec()

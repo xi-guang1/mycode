@@ -8,6 +8,8 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
+import lib
+import event
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
@@ -17,7 +19,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
     QMainWindow, QMenuBar, QPushButton, QSizePolicy,
-    QStatusBar, QVBoxLayout, QWidget)
+    QStatusBar, QVBoxLayout, QWidget,QMessageBox)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -64,6 +66,7 @@ class Ui_MainWindow(object):
 
         self.btn_play = QPushButton(self.layoutWidget)
         self.btn_play.setObjectName(u"btn_play")
+        self.btn_play.clicked.connect(self.play)
 
         self.verticalLayout.addWidget(self.btn_play)
 
@@ -87,4 +90,15 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u5ef6\u7eed\uff1a", None))
         self.btn_play.setText(QCoreApplication.translate("MainWindow", u"\u6f14\u594f", None))
     # retranslateUi
+
+    def play(self,note = None,durlst = None):
+        note = lib.str_to_list(self.NoteEdit.text())
+        durlst = lib.dur_to_durlst(self.durEdit.text())
+        if not note and not durlst:
+            QMessageBox.warning(self.btn_play,"警告","输入有误")
+            return
+        else:
+            event.btn_play_onclick(note,durlst,durlst)
+    
+
 

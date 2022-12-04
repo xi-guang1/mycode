@@ -7,7 +7,6 @@ from ui_MainWindow import *
 from typing import *
 from event import *
 from musicpy import *
-from ui_messagebox import *
 from lib import *
 
 
@@ -47,4 +46,4 @@ root = Ui_MainWindow()
 root.setupUi(main_window)
 
 main_window.show()
-app.exec()
+sys.exit(app.exec())

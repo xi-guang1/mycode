@@ -36,3 +36,12 @@ def str_to_list(string: str) -> List[note]:
         else:
             res.append(eval(f'a{s[0]}__'))
     return res
+
+def dur_to_durlst(string: str) -> List[float]:
+    res = []
+    try:
+        for s in string.split():
+            res.append(float(eval(s)))
+        return res
+    except:
+        return []

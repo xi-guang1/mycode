@@ -80,4 +80,5 @@ _ = 1/8
 
 # print(len(note_lst),len(durlst))
 # play(chord(note_lst, durlst, durlst_1), 120, name='musicpy/temp.mid')
+
 root.mainloop()

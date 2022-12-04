@@ -7,7 +7,7 @@ from ui_main_window import *
 from typing import *
 from event import *
 from musicpy import *
-
+from ui_messagebox import *
 
 a1 = note("C",5)
 a2 = note("D",5)
@@ -76,9 +76,9 @@ _ = 1/8
 
 
 app = PySide6.QtWidgets.QApplication(sys.argv)
-main_window = PySide6.QtWidgets.QWidget()
+main_window = PySide6.QtWidgets.QMainWindow()
 
-root = Ui_Form()
+root = Ui_MainWindow()
 root.setupUi(main_window)
 
 main_window.show()

@@ -2,7 +2,8 @@
 
 import sys
 import PyQt5.QtWidgets
-from ui import *
+import PySide6.QtWidgets
+from main_window import *
 from typing import *
 from event import *
 from musicpy import *
@@ -74,11 +75,11 @@ _ = 1/8
 # play(chord(note_lst, durlst, durlst_1), 120, name='musicpy/temp.mid')
 
 
-app = PyQt5.QtWidgets.QApplication(sys.argv)
-w = PyQt5.QtWidgets.QWidget()
+app = PySide6.QtWidgets.QApplication(sys.argv)
+main_window = PySide6.QtWidgets.QWidget()
 
 root = Ui_Form()
-root.setupUi(w)
+root.setupUi(main_window)
 
-w.show()
+main_window.show()
 app.exec()

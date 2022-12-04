@@ -8,6 +8,8 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
+import event
+import lib
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
@@ -28,7 +30,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.layoutWidget = QWidget(self.centralwidget)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 0, 154, 94))
+        self.layoutWidget.setGeometry(QRect(11, 1, 154, 61))
         self.verticalLayout = QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -39,31 +41,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.label)
 
-        self.NoteEdit = QLineEdit(self.layoutWidget)
-        self.NoteEdit.setObjectName(u"NoteEdit")
+        self.lineEdit = QLineEdit(self.layoutWidget)
+        self.lineEdit.setObjectName(u"lineEdit")
 
-        self.horizontalLayout.addWidget(self.NoteEdit)
+        self.horizontalLayout.addWidget(self.lineEdit)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.label_2 = QLabel(self.layoutWidget)
-        self.label_2.setObjectName(u"label_2")
-
-        self.horizontalLayout_2.addWidget(self.label_2)
-
-        self.durEdit = QLineEdit(self.layoutWidget)
-        self.durEdit.setObjectName(u"durEdit")
-
-        self.horizontalLayout_2.addWidget(self.durEdit)
-
-
-        self.verticalLayout.addLayout(self.horizontalLayout_2)
-
         self.btn_play = QPushButton(self.layoutWidget)
         self.btn_play.setObjectName(u"btn_play")
+        self.btn_play.clicked.connect(self.play)
 
         self.verticalLayout.addWidget(self.btn_play)
 
@@ -84,7 +72,10 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u97f3\u9ad8\uff1a", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u5ef6\u7eed\uff1a", None))
         self.btn_play.setText(QCoreApplication.translate("MainWindow", u"\u6f14\u594f", None))
     # retranslateUi
+
+    def play(self):
+        note = lib.str_to_list(self.lineEdit.text())
+        event.btn_play_onclick(note)
 

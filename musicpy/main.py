@@ -3,7 +3,7 @@
 import sys
 import PyQt5.QtWidgets
 import PySide6.QtWidgets
-from main_window import *
+from ui_main_window import *
 from typing import *
 from event import *
 from musicpy import *

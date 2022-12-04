@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'untitled.ui'
+## Form generated from reading UI file 'main_window.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.1
 ##
@@ -23,20 +23,20 @@ class Ui_Form(object):
         if not Form.objectName():
             Form.setObjectName(u"Form")
         Form.resize(458, 445)
-        self.widget = QWidget(Form)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(10, 10, 154, 61))
-        self.verticalLayout = QVBoxLayout(self.widget)
+        self.layoutWidget = QWidget(Form)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(10, 10, 154, 61))
+        self.verticalLayout = QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.label = QLabel(self.widget)
+        self.label = QLabel(self.layoutWidget)
         self.label.setObjectName(u"label")
 
         self.horizontalLayout.addWidget(self.label)
 
-        self.lineEdit = QLineEdit(self.widget)
+        self.lineEdit = QLineEdit(self.layoutWidget)
         self.lineEdit.setObjectName(u"lineEdit")
 
         self.horizontalLayout.addWidget(self.lineEdit)
@@ -44,7 +44,7 @@ class Ui_Form(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 
-        self.pushButton = QPushButton(self.widget)
+        self.pushButton = QPushButton(self.layoutWidget)
         self.pushButton.setObjectName(u"pushButton")
 
         self.verticalLayout.addWidget(self.pushButton)

@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import sys
 from requests import get
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QLineEdit, QMessageBox

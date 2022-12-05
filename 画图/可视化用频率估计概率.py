@@ -1,6 +1,6 @@
+from random import randint
 import matplotlib.pyplot as plt
 import numpy as np
-from random import randint
 from tqdm import tqdm
 
 x = range(1,int(input('请输入试验次数')) + 1)

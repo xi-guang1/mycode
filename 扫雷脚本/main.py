@@ -41,8 +41,3 @@ path = "扫雷脚本/1.png"
 img = pag.screenshot(region=get_pos())
 img.save(path)
 img_read = cv2.imread(path)
-
-print('gfdgd')
-for i in img_read:
-    for j in i:
-        print(i,file= open("扫雷脚本/1.txt",mode='w+'))

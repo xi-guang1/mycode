@@ -8,6 +8,7 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
+import cv2
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
@@ -17,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
     QMainWindow, QMenuBar, QPushButton, QSizePolicy,
-    QStatusBar, QVBoxLayout, QWidget)
+    QStatusBar, QVBoxLayout, QWidget, QFileDialog, QMessageBox)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -46,6 +47,7 @@ class Ui_MainWindow(object):
 
         self.btn_choose_file = QPushButton(self.layoutWidget)
         self.btn_choose_file.setObjectName(u"btn_choose_file")
+        self.btn_choose_file.clicked.connect(self.choose_file)
 
         self.horizontalLayout_2.addWidget(self.btn_choose_file)
 
@@ -66,16 +68,18 @@ class Ui_MainWindow(object):
 
         self.btn_save_file = QPushButton(self.layoutWidget)
         self.btn_save_file.setObjectName(u"btn_save_file")
+        self.btn_save_file.clicked.connect(self.save_file)
 
         self.horizontalLayout.addWidget(self.btn_save_file)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 
-        self.pushButton_3 = QPushButton(self.layoutWidget)
-        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.btn_start = QPushButton(self.layoutWidget)
+        self.btn_start.setObjectName(u"start")
+        self.btn_start.clicked.connect(self.start)
 
-        self.verticalLayout.addWidget(self.pushButton_3)
+        self.verticalLayout.addWidget(self.btn_start)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -97,6 +101,22 @@ class Ui_MainWindow(object):
         self.btn_choose_file.setText(QCoreApplication.translate("MainWindow", u"\u9884\u89c8...", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u4fdd\u5b58\u8def\u5f84\uff1a", None))
         self.btn_save_file.setText(QCoreApplication.translate("MainWindow", u"\u9884\u89c8...", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\u8f6c\u5316", None))
+        self.btn_start.setText(QCoreApplication.translate("MainWindow", u"\u8f6c\u5316", None))
     # retranslateUi
+
+
+    def choose_file(self):
+        img_name,img_type = QFileDialog.getOpenFileName(None,'选择图片','/home','*.jpg;;*.png','')
+        self.Edit_choose_file.setText(img_name)
+    
+
+    def save_file(self):
+        img_name,img_type = QFileDialog.getSaveFileName(None,'保存图片','/home','*','')
+        self.Edit_save_file.setText(img_name)
+
+
+    def start(self):
+        image = cv2.imread(self.Edit_choose_file.text(), cv2.IMREAD_GRAYSCALE)
+        cv2.imwrite(self.Edit_save_file.text(), image)
+        QMessageBox.information(None,'提示','转换完成')
 

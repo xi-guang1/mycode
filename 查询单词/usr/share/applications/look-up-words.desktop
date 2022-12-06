@@ -3,6 +3,6 @@ Conmment=查单词，顾名思义
 Exec=look-up-words-ui.py
 Icon=icon.png
 Name=look up words ui
-Name[zh]=查单词
+Name[zh]=查询单词ui版
 Terminal=false
 Type=Application

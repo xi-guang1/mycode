@@ -12,9 +12,10 @@ headers={
 
 def click():
     global headers
-    res = get(f'http://api.tangdouz.com/fy.php?nr={edit_1.text()}',headers=headers)
+    res = get(f'http://fanyi.youdao.com/translate?&doctype=json&type=AUTO&i={edit_1.text()}',headers=headers)
     res.encoding = 'utf-8'
-    QMessageBox.information(w,'查询结果',res.text)
+    print(res.json())
+    QMessageBox.information(w,'查询结果',res.json()['translateResult'][0][0]['tgt'])
 
 
 app = QApplication(sys.argv)

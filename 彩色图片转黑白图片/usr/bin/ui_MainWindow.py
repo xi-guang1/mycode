@@ -39,15 +39,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.label)
 
-        self.lineEdit = QLineEdit(self.layoutWidget)
-        self.lineEdit.setObjectName(u"lineEdit")
+        self.Edit_choose_file = QLineEdit(self.layoutWidget)
+        self.Edit_choose_file.setObjectName(u"Edit_choose_file")
 
-        self.horizontalLayout_2.addWidget(self.lineEdit)
+        self.horizontalLayout_2.addWidget(self.Edit_choose_file)
 
-        self.pushButton = QPushButton(self.layoutWidget)
-        self.pushButton.setObjectName(u"pushButton")
+        self.btn_choose_file = QPushButton(self.layoutWidget)
+        self.btn_choose_file.setObjectName(u"btn_choose_file")
 
-        self.horizontalLayout_2.addWidget(self.pushButton)
+        self.horizontalLayout_2.addWidget(self.btn_choose_file)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout_2)
@@ -59,15 +59,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.label_2)
 
-        self.lineEdit_2 = QLineEdit(self.layoutWidget)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.Edit_save_file = QLineEdit(self.layoutWidget)
+        self.Edit_save_file.setObjectName(u"Edit_save_file")
 
-        self.horizontalLayout.addWidget(self.lineEdit_2)
+        self.horizontalLayout.addWidget(self.Edit_save_file)
 
-        self.pushButton_2 = QPushButton(self.layoutWidget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.btn_save_file = QPushButton(self.layoutWidget)
+        self.btn_save_file.setObjectName(u"btn_save_file")
 
-        self.horizontalLayout.addWidget(self.pushButton_2)
+        self.horizontalLayout.addWidget(self.btn_save_file)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout)
@@ -94,9 +94,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u539f\u56fe\u7247\u8def\u5f84", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u9884\u89c8...", None))
+        self.btn_choose_file.setText(QCoreApplication.translate("MainWindow", u"\u9884\u89c8...", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u4fdd\u5b58\u8def\u5f84\uff1a", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u9884\u89c8...", None))
+        self.btn_save_file.setText(QCoreApplication.translate("MainWindow", u"\u9884\u89c8...", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\u8f6c\u5316", None))
     # retranslateUi
 

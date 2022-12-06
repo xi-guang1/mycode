@@ -1,0 +1,8 @@
+[Desktop Entry]
+Conmment=可以将彩色图片转换成黑白图片
+Exec=color-img-to-bw-img.py
+Icon=icon.png
+Name=color-img-to-bw-img.py
+Name[zh]=彩色图转黑白图
+Terminal=false
+Type=Application

@@ -20,8 +20,8 @@ def patupian(x):
         else:
             print(f'未知错误，错误码{wz.status_code}')
         return wz.status_code
-    with open(f"./爬取的图片/{t}.html", mode='a+') as file:
-        file.write(f"< img src=\"{wz.text}\" alt=\"Smiley face\" width=\"100%\" loading=\"lazy\">\n")
+    with open(f"./{t}.html", mode='a+') as file:
+        file.write(f"<img src=\"{wz.text}\" alt=\"Smiley face\" width=\"100%\" loading=\"lazy\">\n")
     print(f"第{x}张已完成")
     return
 

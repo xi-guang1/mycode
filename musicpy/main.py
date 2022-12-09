@@ -46,4 +46,4 @@ root = Ui_MainWindow()
 root.setupUi(main_window)
 
 main_window.show()
-sys.exit(app.exec())
+sys.exit(app.exec_())

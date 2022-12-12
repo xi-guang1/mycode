@@ -3,8 +3,8 @@ import base64
 import socket as sk
 
 s = sk.socket()
-host = sk.gethostbyname(sk.gethostname())
-port = 8888
+host = '127.0.0.1'
+port = 6666
 s.bind((host,port))
 s.listen(6)
 

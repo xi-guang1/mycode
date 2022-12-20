@@ -4,7 +4,7 @@ import socket as sk
 
 s = sk.socket()
 host = '127.0.0.1'
-port = 6666
+port = 10809
 s.bind((host,port))
 s.listen(6)
 

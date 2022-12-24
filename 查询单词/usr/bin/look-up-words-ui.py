@@ -14,7 +14,7 @@ def click():
     global headers
     res = get(f'http://fanyi.youdao.com/translate?&doctype=json&type=AUTO&i={edit_1.text()}',headers=headers)
     res.encoding = 'utf-8'
-    print(res.json())
+    # print(res.json())
     QMessageBox.information(w,'查询结果',res.json()['translateResult'][0][0]['tgt'])
 
 

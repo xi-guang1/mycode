@@ -48,7 +48,7 @@ t = time.localtime(time.time())
 t = time.asctime(t)
 template = Template(
     background=Image.new(mode="1", size=(1000, 3000), color=1),
-    font=ImageFont.truetype(r"test\font\汐光手写体.ttf", size=40),
+    font=ImageFont.truetype(r"test\font\云峰寒蝉体.ttf", size=40),
     line_spacing=45,
     fill=0,  # 字体“颜色”
     left_margin=10,

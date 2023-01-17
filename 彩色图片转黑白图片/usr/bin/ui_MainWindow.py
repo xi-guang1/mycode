@@ -106,17 +106,20 @@ class Ui_MainWindow(object):
 
 
     def choose_file(self):
-        img_name,img_type = QFileDialog.getOpenFileName(None,'选择图片','/home','*.jpg;;*.png','')
+        img_name,img_type = QFileDialog.getOpenFileName(None,'选择图片','','*.jpg;;*.png','')
         self.Edit_choose_file.setText(img_name)
     
 
     def save_file(self):
-        img_name,img_type = QFileDialog.getSaveFileName(None,'保存图片','/home','*','')
+        img_name,img_type = QFileDialog.getSaveFileName(None,'保存图片','','*.jpg;;*.png','')
         self.Edit_save_file.setText(img_name)
 
 
     def start(self):
-        image = cv2.imread(self.Edit_choose_file.text(), cv2.IMREAD_GRAYSCALE)
-        cv2.imwrite(self.Edit_save_file.text(), image)
-        QMessageBox.information(None,'提示','转换完成')
+        try:
+            image = cv2.imread(self.Edit_choose_file.text(), cv2.IMREAD_GRAYSCALE)
+            cv2.imwrite(self.Edit_save_file.text(), image)
+            QMessageBox.information(None,'提示','转换完成')
+        except cv2.error as err:
+            QMessageBox.warning(None,"警告","路径为空或有误")
 

@@ -5,7 +5,7 @@ import librosa
 import librosa.display
 import soundfile as sf
 
-y,sr = librosa.load('音频处理/当那一天来临.mp3', mono=True, offset=0.0, duration=None)
+y,sr = librosa.load('test\music\道长.mp3', mono=True, offset=0.0, duration=None)
 melspec = librosa.feature.melspectrogram(y, sr, n_fft=1024, hop_length=512, n_mels=128)
 logmelspec = librosa.power_to_db(melspec)
 plt.figure()

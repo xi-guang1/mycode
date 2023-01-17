@@ -5,6 +5,7 @@ from tqdm import tqdm
 
 t = time.localtime(time.time())
 t = time.asctime(t)
+t = 1
 url="http://api.tangdouz.com/sjer.php"
 headers={
  "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36 Edg/97.0.1072.55"
@@ -20,9 +21,8 @@ def patupian(x):
         else:
             print(f'未知错误，错误码{wz.status_code}')
         return wz.status_code
-    with open(f"./{t}.html", mode='a+') as file:
+    with open(f"test\images\{t}.html", mode='a+') as file:
         file.write(f"<img src=\"{wz.text}\" alt=\"Smiley face\" width=\"100%\" loading=\"lazy\">\n")
-    print(f"第{x}张已完成")
     return
 
 for x in tqdm(range(i)):

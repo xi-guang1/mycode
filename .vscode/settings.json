@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "Leetcode\\2027. 转换字符串的最少操作次数"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
